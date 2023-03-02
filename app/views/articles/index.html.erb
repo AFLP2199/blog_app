@@ -7,7 +7,7 @@
         <h3 class="card-title"><%= article.title %></h3>
         <p class="card-text"><%= article.body %></p>
       </div>
-      <a href="#" class="btn btn-primary m-2">Read article</a>
+      <%= link_to 'Read article', article, class: "btn btn-primary m-2" %>
     </li>
   <% end %>
 </ul>
