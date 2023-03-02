@@ -1,9 +1,13 @@
-<h1>Articles</h1>
+<h2 class="mx-2 my-4">List of articles</h2>
 
-<ul>
+<ul class="d-flex">
   <% @articles.each do |article| %>
-    <li>
-      <%= article.title %>
+    <li class="card m-2" style="width: 18rem">
+      <div class="card-body">
+        <h3 class="card-title"><%= article.title %></h3>
+        <p class="card-text"><%= article.body %></p>
+      </div>
+      <a href="#" class="btn btn-primary m-2">Read article</a>
     </li>
   <% end %>
 </ul>
