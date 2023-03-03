@@ -1,14 +1,18 @@
-<div class="px-2 py-4">
+<div class="px-2 py-4 bg-dark">
   <h2 class="mx-2 p-2 text-white fs-4">List of articles</h2>
-<ul class="d-flex p-2">
-  <% @articles.each do |article| %>
-  <li class="card m-2" style="width: 18rem">
-    <div class="card-body">
-      <h3 class="card-title fs-5"><%= article.title %></h3>
-      <p class="card-text"><%= article.body %></p>
-    </div>
-    <%= link_to 'Read article', article, class: "btn btn-primary m-2" %>
-  </li>
-  <% end %>
-</ul>
+  <ul class="d-flex p-2">
+    <% @articles.each do |article| %>
+      <li class="card m-2" style="width: 18rem">
+        <div class="card-body">
+          <h3 class="card-title fs-5">
+            <%= article.title %>
+          </h3>
+          <p class="card-text">
+            <%= article.body %>
+          </p>
+        </div>
+        <%= link_to "Read article", article, class: "btn btn-primary m-2" %>
+      </li>
+    <% end %>
+  </ul>
 </div>

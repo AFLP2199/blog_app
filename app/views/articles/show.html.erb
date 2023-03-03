@@ -1,4 +1,43 @@
 <div class="d-flex p-4 flex-column align-items-center text-white">
-    <h2><%= @article.title %></h2>
-    <p><%= @article.body %></p>
+  <h2><%= @article.title %></h2>
+  <p><%= @article.body %></p>
+
+  <div class="ms-auto">
+    <%= link_to "Edit", edit_article_path, class: "btn btn-success" %>
+    <%= link_to "Delete",
+    article_path(@article),
+    class: "btn btn-danger",
+    data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?"
+    } %>
+  </div>
+
+  <h2>Comments</h2>
+  <% @article.comments.each do |comment| %>
+    <p>
+      <strong>Commenter:</strong>
+      <%= comment.commenter %>
+    </p>
+
+    <p>
+      <strong>Comment:</strong>
+      <%= comment.body %>
+    </p>
+  <% end %>
+
+  <h2>Add a comment:</h2>
+  <%= form_with model: [ @article, @article.comments.build ] do |form| %>
+    <p>
+      <%= form.label :commenter %><br>
+      <%= form.text_field :commenter %>
+    </p>
+    <p>
+      <%= form.label :body %><br>
+      <%= form.text_area :body %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
 </div>
