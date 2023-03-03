@@ -1,0 +1,19 @@
+<div class="text-white p-4">
+  <h2 class="mt-2 mb-4 text-white fs-4">Create a new article</h2>
+  
+  <%= form_with model: @article do |form| %>
+  <div class="my-2">
+    <%= form.label :title, class: "mb-2" %><br>
+    <%= form.text_field :title %>
+  </div>
+  
+  <div class="my-2">
+    <%= form.label :body, class: "mb-2" %><br>
+    <%= form.text_area :body %>
+  </div>
+  
+  <div class="my-2">
+    <%= form.submit class: "btn btn-primary my-2" %>
+  </div>
+  <% end %>
+</div>

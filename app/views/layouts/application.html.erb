@@ -10,12 +10,31 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="container-xl mx-auto bg-secondary h-full">
-    <nav class="navbar bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand text-white" href="/">My Blog</a>
+  <body class="mx-auto">
+    <div class="bg-image"></div>
+    <nav class="navbar bg-dark border-bottom border-secondary">
+      <div class="container-fluid pb-2 justify-content-center align-items-center border-bottom border-secondary">
+        <ul class="d-flex m-0 fs-5 list-unstyled">
+          <li>
+            <%= link_to 'Home', articles_path, class: "m-3 text-decoration-none hover-primary" %>
+          </li>
+          <li>
+            <%= link_to 'New', new_article_path, class: "m-3 text-decoration-none hover-primary" %>
+          </li>
+          <li>
+            <%= link_to 'About', new_article_path, class: "m-3 text-decoration-none hover-primary" %>
+          </li>
+        </ul>
+      </div>
+      <div class="d-block mx-auto py-5 text-center text-white">
+        <h1 class="text-uppercase fw-bold text-transparent" style="font-size: 100px">
+          My Blog
+        </h1>
+        <p class="d-inline fs-5 fw-semibold text-gradient">A blog made in ruby</p>
       </div>
     </nav>
-    <%= yield %>
+    <main class="container-xl mt-4 bg-dark">
+      <%= yield %>
+    </main>
   </body>
 </html>
