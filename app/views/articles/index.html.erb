@@ -1,7 +1,8 @@
 <div class="px-2 py-4 bg-dark bg-opacity-50">
   <h2 class="mx-2 p-2 text-white fs-4">List of articles</h2>
   <ul class="d-flex p-2">
-    <% @articles.each do |article| %>
+    <% @articles.each do |article| %>`
+      <% unless article.archived? %>
       <li class="card m-2" style="width: 18rem">
         <div class="card-body">
           <h3 class="card-title fs-5">
@@ -13,6 +14,7 @@
         </div>
         <%= link_to "Read article", article, class: "btn btn-primary m-2" %>
       </li>
+      <% end %>
     <% end %>
   </ul>
 </div>

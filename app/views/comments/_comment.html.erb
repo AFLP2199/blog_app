@@ -1,0 +1,17 @@
+<% if (comment.body && !comment.archived?) %> 
+    <div class="p-2 my-2 me-auto bg-white bg-opacity-25 w-100">
+        <p>
+            <strong><%= comment.commenter %></strong>
+        </p>
+        <p>
+        <%= comment.body %>
+        </p>
+        <p>
+            <%= link_to "Destroy Comment", [comment.article, comment], data: {
+                          turbo_method: :delete,
+                          turbo_confirm: "Are you sure?"
+                        } %>
+          </p>  
+    </div>
+<% end %> 
+
