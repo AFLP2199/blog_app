@@ -101,3 +101,14 @@ div.field_with_errors {
         transform: scale(1.1);
     }
 }
+
+.dark-input {
+    background-color: #212529;
+    color: #fff;
+    border: 1px solid #6c757d;
+
+    &:focus {
+        background-color: #212529;
+        color: #fff;
+    }
+}

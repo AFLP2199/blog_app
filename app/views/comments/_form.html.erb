@@ -2,16 +2,16 @@
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
     <p>
       <%= form.label :commenter, class: "mb-2 form-label" %><br>
-      <%= form.text_field :commenter, class: "form-control" %>
+      <%= form.text_field :commenter, class: "form-control py-1 dark-input" %>
     </p>
     <p>
       <%= form.label :body, class: "mb-2 form-label" %><br>
-      <%= form.text_area :body, class: "form-control" %>
+      <%= form.text_area :body, class: "form-control py-1 dark-input" %>
     </p>
     <p>
       <%= form.label :status, 'Visibility', class: "mb-2 form-label" %><br>
-      <%= form.select(:status, ['public', 'private', 'archived'], {selected: 'public'}, { :class => 'form-select' }) %>
+      <%= form.select(:status, ['public', 'private', 'archived'], {selected: 'public'}, { :class => 'form-select py-1 dark-input' }) %>
     </p>
-      <%= form.submit "Submit Comment", class: "btn btn-primary my-2" %>
+      <%= form.submit "Submit Comment", class: "btn btn-primary mt-2" %>
     </p>
 <% end %>
