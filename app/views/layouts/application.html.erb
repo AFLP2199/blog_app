@@ -11,49 +11,10 @@
   </head>
 
   <body class="mx-auto">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <div class="bg-image"></div>
-    <nav class="navbar pb-0 bg-dark bg-opacity-50">
-      <div
-        class="
-          container-fluid
-          pb-2
-          justify-content-center
-          align-items-center
-          border-bottom
-          border-secondary
-        "
-      >
-        <ul class="d-flex m-0 fs-5 list-unstyled">
-          <li>
-            <%= link_to "Home", articles_path, class: "m-3 text-decoration-none hover-primary" %>
-          </li>
-        </ul>
-      </div>
-      <% if current_page?('/') || current_page?('/articles') %>
-        <div
-          class="
-            d-flex
-            flex-column
-            justify-content-center
-            align-items-center
-            py-5
-            text-center
-            text-white
-            border-bottom
-            border-secondary
-            w-100
-          "
-        >
-          <h1
-            class="d-inline text-uppercase fw-bold text-transparent"
-            style="font-size: 100px"
-          >
-            My Blog
-          </h1>
-          <p class="d-inline fs-5 fw-semibold text-gradient">A blog made in ruby</p>
-        </div>
-      <% end %>
-    </nav>
+    <%= render "shared/navbar" %> 
     <main class="container-xl mt-4">
       <%= yield %>
     </main>
